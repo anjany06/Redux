@@ -4,20 +4,27 @@ function Controls() {
   return (
     <>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button
-          type="button"
-          className="btn btn-primary btn-lg px-4 gap-3"
-          fdprocessedid="5bmcafi"
-        >
-          Primary button
+        <button type="button" class="btn btn-primary">
+          +1
         </button>
-        <button
-          type="button"
-          className="btn btn-outline-secondary btn-lg px-4"
-          fdprocessedid="zwvpg"
-        >
-          Secondary
+        <button type="button" class="btn btn-success">
+          -1
         </button>
+        {/* <button type="button" class="btn btn-danger">
+          Danger
+        </button>
+        <button type="button" class="btn btn-warning">
+          Warning
+        </button>
+        <button type="button" class="btn btn-info">
+          Info
+        </button>
+        <button type="button" class="btn btn-light">
+          Light
+        </button>
+        <button type="button" class="btn btn-dark">
+          Dark
+        </button> */}
       </div>
     </>
   );
