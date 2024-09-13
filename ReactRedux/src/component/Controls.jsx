@@ -6,7 +6,7 @@ function Controls() {
   const inputElement = useRef();
 
   const handleIncrement = () => {
-    dispatch({ type: "INCREMENT" });
+    dispatch(counterActions.increment());
   };
   const handleDecrement = () => {
     dispatch({ type: "DECREMENT" });
