@@ -3,23 +3,35 @@ import {configureStore, createSlice} from "@reduxjs/toolkit";
 //   counter : 0,
 //   privacy : false
 // }
+const privacySlice = createSlice({
+  name : 'privacy',
+  initialState: false,
+  reducers : {
+    toggle : (state) =>{
+      return state = !state;
+    }
 
+  }
+})
 const counterSlice = createSlice({
   name : 'counter',
   initialState : {counterVal : 0},
   reducers : {
-    increment : (state, action) => {
+    increment : (state) => {
+      state.counterVal++;
 
     },
     decrement : (state, action) => {
+      state.counterVal--;
 
     },
     add : (state, action) => {
+      state.counterVal += Number(action.payload);
 
     },
     subtract : (state, action) => {
-
-    }
+      state.counterVal -= Number(action.payload);
+    },
 
   }
 
@@ -41,8 +53,12 @@ const counterSlice = createSlice({
 
 
 const counterStore = configureStore({reducer : {
-  counter : counterSlice.reducer
+  counter : counterSlice.reducer,
+  privacy : privacySlice.reducer
   }});
+ 
 
 export const counterActions = counterSlice.actions;
+
+export const privacyActions = privacySlice.actions;
 export default counterStore;
